@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--Question 1 nad 2-->
+    <bean id="database" class="com.coreSpring.Database">
+        <property name="port" value="8080"/>
+        <property name="name" value="oracle"/>
+    </bean>
+
+    <!--Question 3-->
+    <bean id="teaRestaurant" class="com.coreSpring.Restaurant">
+        <property name="hotDrink" ref="tea"/>
+    </bean>
+
+    <bean id="tea" class="com.coreSpring.Tea"/>
+
+    <bean id="expressTea" class="com.coreSpring.ExpressTea"/>
+
+    <!--Question 4-->
+    <bean id="teaExpressRestaurant" class="com.coreSpring.Restaurant">
+        <property name="hotDrink">
+            <bean class="com.coreSpring.ExpressTea"/>
+        </property>
+
+    </bean>
+
+    <!--Question 5-->
+    <bean class="com.coreSpring.Complex" id="complex" name="complexBean">
+        <property name="list">
+            <list>
+                <value>21</value>
+                <value>24</value>
+                <value>28</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>10</value>
+                <value>11</value>
+                <value>12</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="A" value="1"/>
+                <entry key="B" value="2"/>
+                <entry key="C" value="3"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--Question 6-->
+
+
+</beans>
